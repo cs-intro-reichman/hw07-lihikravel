@@ -13,12 +13,8 @@ public class SpellChecker {
 
 
 	public static String tail(String str) {
-		String str1 = "";
-		for(int i = 1; i <= str1.length(); i++){
-			char var = str1.charAt(i);
-			str1 = str1 + var;
-		}
-		return str1;
+		
+		return str.substring(1);
 	}
 
 	public static int levenshtein(String word1, String word2) {
@@ -37,7 +33,7 @@ public class SpellChecker {
 		if(word1.charAt(0) == word2.charAt(0)){
 			return levenshtein(tail(word1), tail(word2));
 		}
-		else
+	
 		return 
 		1 + Math.min(Math.min(levenshtein(tail(word1), word2),levenshtein(word1, tail(word2))), levenshtein(tail(word1), tail(word2)));
 	}
