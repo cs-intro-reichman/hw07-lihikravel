@@ -52,11 +52,13 @@ public class HashTagTokenizer {
         }
         int N = hashtag.length();
 		String hashtag1 = lowerCase(hashtag);
+		//new word to use after evry print of the single word from hashtag
 		String hashtag2 = "";
         for (int i = 1; i <= N; i++) {
 			if(existInDictionary(hashtag1.substring(0,i), dictionary)){
 				System.out.println(hashtag1.substring(0, i));
-				 for(int j = i +1; j <= N; j++){
+				//develop word2
+				 for(int j = i + 1; j <= N; j++){
 					char var2 = hashtag1.charAt(j - 1);
 					hashtag2 = hashtag2 + var2;
 				 } 
