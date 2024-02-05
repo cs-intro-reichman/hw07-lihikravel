@@ -50,6 +50,9 @@ public class SpellChecker {
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
 		for(int i = 0; i < dictionary.length; i++){
+			if(word.equals(dictionary[i])){
+				return word;
+			}
 			if(levenshtein(word, dictionary[i]) == threshold)
 			return dictionary[i];
 		}
